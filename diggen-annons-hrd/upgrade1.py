@@ -19,16 +19,12 @@ class UpgradeHandler(webapp.RequestHandler):
         self.response.headers.add_header('Content-Type', 'text/plain')
         self.response.out.write('\n'.join(lines))
 
-   
-application = webapp.WSGIApplication(urls, debug=True)
-util.run_wsgi_app(application)
-
-""" def main():
-
+def main():
     urls = [
         ('/upgrade', UpgradeHandler),
     ]
+    application = webapp.WSGIApplication(urls, debug=True)
+    util.run_wsgi_app(application)
 
 if __name__ == '__main__':
     main()
-"""
